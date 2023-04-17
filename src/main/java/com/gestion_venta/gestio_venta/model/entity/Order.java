@@ -12,7 +12,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "order", indexes = { @Index(name = "index_order", columnList = "order") })
+@Table(name = "order")
+// @Table(name = "order", indexes = { @Index(name = "index_order", columnList = "order") })
 public class Order implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +36,7 @@ public class Order implements Serializable{
     }
 
     @Serial
-    private static final long serialVersionUID = 4545L;
+    private static final long serialVersionUID = 45450201L;
 
   
 }

@@ -22,11 +22,11 @@ public class CustomerController {
         this.service = service;
     }
 
-    @GetMapping({ "/", "/customers", "/index" })
+    @GetMapping({ "/", "/customers2", "/index" })
     public String listCustomer(Model model) {
         model.addAttribute("title", "Facturación | Customer");
         model.addAttribute("customers", service.listCustomers());
-        return "customers";
+        return "customers2";
     }
 
     @PostMapping("/register")
