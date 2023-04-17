@@ -26,13 +26,13 @@
                 <div class="card-body">
                     <form th:action="@{/register_order}" th:object="${order}" method="POST">
 
-                        <div class="form-group">
+                         <div class="form-group">
                             <label>Cantidad: </label>
                             <input type="text" name="amount" th:field="*{amount}" class="form-control"
                                 placeholder="Digite la cantidad : " required>
                         </div>
 
-                        <div class="form-group">
+                       <div class="form-group">
                             <label>El Cliente : </label>
                             <input type="text" name="customer" th:field="*{customer}" class="form-control"
                                 placeholder="Digite el cliente : " required>
@@ -44,7 +44,7 @@
                                 placeholder="Digite el comercio : " required>
                         </div>
 
-                        <div class="form-group">
+                         <div class="form-group">
                             <label>Fecha de ingreso : </label>
                             <input type="date" value="2023-04-16" name="createAt" th:field="*{createAt}" class="form-control"
                                 placeholder="Digite la Fecha  2023-04-16 : " required>

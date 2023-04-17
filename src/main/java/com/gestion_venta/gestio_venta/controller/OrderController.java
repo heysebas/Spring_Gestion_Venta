@@ -60,11 +60,8 @@ public class OrderController {
         Order ExistingOrders = service.getOrderById(id);
         ExistingOrders.setId(id);
         ExistingOrders.setAmount(order.getAmount());
-        ExistingOrders.setCreatedAt(order.getCreatedAt());
-        // ExistingOrders.setSecondSurname(order.getSecondSurname());
-        // ExistingOrders.setCity(order.getCity());
-        // ExistingOrders.setCommission(order.getCommission());
-        // ExistingOrders.setCreateAt(order.getCreateAt());
+        ExistingOrders.setCreateAt(order.getCreateAt());
+
 
         service.updateOrder(ExistingOrders);
         return "redirect:/orders";

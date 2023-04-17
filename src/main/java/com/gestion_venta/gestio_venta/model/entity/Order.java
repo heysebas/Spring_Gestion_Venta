@@ -9,12 +9,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Data
 @Entity
-@Table(name = "order")
-// @Table(name = "order", indexes = { @Index(name = "index_order", columnList = "order") })
-public class Order implements Serializable{
+@Table(name = "order2")
+// @Table(name = "order", indexes = { @Index(name = "index_order", columnList =
+// "order") })
+public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +22,7 @@ public class Order implements Serializable{
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date createdAt;
+    private Date createAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
@@ -31,12 +31,11 @@ public class Order implements Serializable{
     private Commercial commercial;
 
     @PrePersist
-    public void PrePersist(){
-        createdAt = new Date();
+    public void PrePersist() {
+        createAt = new Date();
     }
 
     @Serial
     private static final long serialVersionUID = 45450201L;
 
-  
 }
