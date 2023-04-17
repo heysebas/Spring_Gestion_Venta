@@ -1,5 +1,6 @@
 package com.gestion_venta.gestio_venta.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,10 +12,14 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gestion_venta.gestio_venta.model.entity.Order;
+import com.gestion_venta.gestio_venta.model.service.ICommercialService;
 import com.gestion_venta.gestio_venta.model.service.IOrderService;
 
 @Controller
 public class OrderController {
+
+    @Autowired
+    private ICommercialService service2;
 
     private IOrderService service;
 
@@ -26,6 +31,7 @@ public class OrderController {
     public String commercialLists(Model model) {
         model.addAttribute("title", "Facturación | Order");
         model.addAttribute("orders", service.orderLists());
+        model.addAttribute("commercial", service2.commercialLists());
         return "orders";
     }
 
@@ -45,6 +51,7 @@ public class OrderController {
     public String ShowOrdersRegistrationForm(Model model) { // mostrar Formulario De Registrar comercio
         Order order = new Order();
         model.addAttribute("order", order);
+        model.addAttribute("commercial", service2.commercialLists());
         return "create_orders";
     }
 
