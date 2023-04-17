@@ -29,4 +29,19 @@ public class CustomerServiceImpl implements ICustomerService{
     public void saveCustomer(Customer customer) {
         customerDao.save(customer);
     }
+
+    @Override
+    public Customer getCustomersById(Long id) {
+        return customerDao.findById(id).get();
+    }
+
+    @Override
+    public Customer updateClients(Customer customer) {
+        return customerDao.save(customer);
+    }
+
+    @Override
+    public void deleteClients(Long id) {
+        customerDao.deleteById(id);
+    }
 }

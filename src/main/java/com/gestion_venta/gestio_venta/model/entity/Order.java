@@ -1,15 +1,20 @@
 package com.gestion_venta.gestio_venta.model.entity;
 
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
-@Table(name = "order", indexes = { @Index(name = "index_description", columnList = "description") })
-public class Order {
+@Table(name = "order", indexes = { @Index(name = "index_amount", columnList = "amount") })
+public class Order implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,4 +34,6 @@ public class Order {
 
     @Serial
     private static final long serialVersionUID = 4545L;
+
+  
 }
