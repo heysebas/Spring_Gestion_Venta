@@ -1,6 +1,6 @@
 package com.gestion_venta.gestio_venta.controller;
 
-import jakarta.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

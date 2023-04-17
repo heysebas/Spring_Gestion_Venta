@@ -36,7 +36,7 @@ public class Customer implements Serializable {
         
         private String city;
         
-        private String category;
+        private int category;
         @NotNull
         @Column(name = "create_at")
         @Temporal(TemporalType.DATE)

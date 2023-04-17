@@ -7,13 +7,12 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+
+@Data
 @Entity
-@Table(name = "order", indexes = { @Index(name = "index_amount", columnList = "amount") })
+@Table(name = "order", indexes = { @Index(name = "index_order", columnList = "order") })
 public class Order implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
