@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.gestion_venta.gestio_venta.model.entity.Commercial;
 
 public interface ICommercialDao extends JpaRepository<Commercial, Long> {
-@Query("select c from Commercial c left join fetch c.orders f where c.name = ?1")
+// @Query("select c from Commercial c left join fetch c.orders f where c.name = ?1")
 public Commercial findByName(String name);
 }

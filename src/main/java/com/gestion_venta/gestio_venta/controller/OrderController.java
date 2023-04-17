@@ -58,6 +58,7 @@ public class OrderController {
     @GetMapping("/orders/edit/{id}")
     public String showEditForm(@PathVariable Long id, Model model) { // mostrar Formulario De Editar
         model.addAttribute("order", service.getOrderById(id));
+        model.addAttribute("commercial", service2.getCommercialById(id));
         return "edit_order";
     }
 

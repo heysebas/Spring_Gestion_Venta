@@ -72,7 +72,12 @@ public class CustomerController {
 
     @GetMapping("/customers/{id}")
     public String deleteClients(@PathVariable Long id) {
-        service.deleteClients(id);
+        if (service.getCustomersById(id).getOrders().size() == 0) {
+            service.deleteClients(id);
+            return "redirect:/customers";
+            // return "customers";
+        }
+        // service.deleteClients(id);
         return "redirect:/customers";
     }
 }
