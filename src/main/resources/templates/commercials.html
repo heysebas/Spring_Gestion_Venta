@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Listado de Clientes</title>
+    <title>Listado de Comercios</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link
@@ -13,10 +13,10 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#"> Control de Clientes</a>
+        <a class="navbar-brand" href="#"> Control de Comercios</a>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" th:href="@{/customers}">Control de Clientes</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" th:href="@{/commercials}">Control de Comercios</a></li> -->
             </ul>
         </div>
     </nav>
@@ -24,42 +24,40 @@
 
     <div class="container">
         <div class="row">
-            <h1>Lista de Clientes</h1>
+            <h1>Lista de Comercios</h1>
         </div>
         <div class="row">
             <div class="col-lg-3">
-                <a th:href="@{/customers/new}" class="btn btn-primary btn-sm mb3">Agregar Cliente</a>
+                <a th:href="@{/commercials/new}" class="btn btn-primary btn-sm mb3">Agregar Comercios</a>
             </div>
-            <div class="col-lg-3">
-                <a th:href="@{/commercials}" class="btn btn-primary btn-sm mb3">Agregar Comercio</a>
-            </div>
+            
         </div>
         <br>
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th>Nombre Cliente</th>
+                    <th>Nombre</th>
                     <th>Primer Apellido</th>
                     <th>Segundo Apellido</th>
                     <th>Email</th>
                     <th>Ciudad</th>
-                    <th>Categoria</th>
+                    <th>Comisión</th>
                     <th>Fecha de creación</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="customer : ${customers}">
-                    <td th:text="${customer.name}">Nombre Cliente</td>
-                    <td th:text="${customer.firstSurname}">Primer Apellido</td>
-                    <td th:text="${customer.secondSurname}">Segundo Apellido</td>
-                    <td th:text="${customer.email}">Email</td>
-                    <td th:text="${customer.city}">Ciudad</td>
-                    <td th:text="${customer.category}">Categoria</td>
-                    <td th:text="${customer.createAt}">Fecha de creación</td>
+                <tr th:each="commercial : ${commercials}">
+                    <td th:text="${commercial.name}">Nombre</td>
+                    <td th:text="${commercial.firstSurname}">Primer Apellido</td>
+                    <td th:text="${commercial.secondSurname}">Segundo Apellido</td>
+                    <td th:text="${commercial.email}">Email</td>
+                    <td th:text="${commercial.city}">Ciudad</td>
+                    <td th:text="${commercial.commission}">Comisión</td>
+                    <td th:text="${commercial.createAt}">Fecha de creación</td>
                     <td>
 
-                        <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-info">Editar</a>
-                        <a th:href="@{/customers/{id}(id=${customer.id})}" class="btn btn-danger">Eliminar</a>
+                        <a th:href="@{/commercials/edit/{id}(id=${commercial.id})}" class="btn btn-info">Editar</a>
+                        <a th:href="@{/commercials/{id}(id=${commercial.id})}" class="btn btn-danger">Eliminar</a>
                         <a href="/"></a>
                     </td>
                 </tr>

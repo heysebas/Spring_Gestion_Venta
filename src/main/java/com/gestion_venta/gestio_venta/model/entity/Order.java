@@ -27,6 +27,9 @@ public class Order implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Commercial commercial;
+
     @PrePersist
     public void PrePersist(){
         createdAt = new Date();
