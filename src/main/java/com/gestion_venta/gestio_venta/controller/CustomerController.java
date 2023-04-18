@@ -80,4 +80,12 @@ public class CustomerController {
         // service.deleteClients(id);
         return "redirect:/customers";
     }
+
+    @GetMapping({ "/consultation" })
+    public String listConsultation(Model model) {
+        // model.addAttribute("title", "Facturación | Customer");
+        model.addAttribute("consultation", service.listCustomers());
+        return "consultation";
+    }
+    
 }

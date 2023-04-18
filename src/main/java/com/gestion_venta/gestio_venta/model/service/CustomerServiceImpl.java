@@ -44,4 +44,12 @@ public class CustomerServiceImpl implements ICustomerService{
     public void deleteClients(Long id) {
         customerDao.deleteById(id);
     }
+
+
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Customer> listConsultation() {
+        return customerDao.filter();
+    }
 }
