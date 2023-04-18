@@ -2,7 +2,7 @@ package com.gestion_venta.gestio_venta.model.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+// import org.springframework.data.jpa.repository.Query;
 
 import com.gestion_venta.gestio_venta.model.entity.Commercial;
 

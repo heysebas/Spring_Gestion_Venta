@@ -12,14 +12,8 @@ public interface ICustomerDao extends JpaRepository<Customer, Long> {
 
     @Query(
         value = "SELECT * FROM customers c LEFT JOIN order2 p ON c.id = p.customer_id ORDER BY c.first_surname ASC, c.second_surname ASC, c.name ASC",
-    
-
-
-
-
             // value = "select * from customers cu left join order2 ord on cu.id = ord.customer_id order by cu.first_surname,cu.second_surname,cu.name asc",
             nativeQuery=true)
-
 public List<Object[]> filter();
 
     // @Query("select c.first_surname, c.second_surname, c.name, o from customers c " +
