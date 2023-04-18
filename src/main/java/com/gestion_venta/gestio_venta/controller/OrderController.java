@@ -39,7 +39,7 @@ public class OrderController {
     public String saveCommercial(@ModelAttribute("order") Order order, BindingResult result,
             RedirectAttributes flash, SessionStatus status) {
         if (result.hasErrors()) {
-            return "orders";
+            return "redirect:/orders";
         }
         flash.addAttribute("success", "el pedidos fue guardado con exito");
         service.saveOrder(order);

@@ -72,7 +72,11 @@ public class CommercialController {
 
     @GetMapping("/commercials/{id}")
     public String deleteClients(@PathVariable Long id) {
-        service.deleteCommercial(id);
+        if (service.getCommercialById(id).getOrders().size() == 0) {
+            service.deleteCommercial(id);
+            return "redirect:/customers";
+            // return "customers";
+        }
         return "redirect:/commercials";
     }
 }

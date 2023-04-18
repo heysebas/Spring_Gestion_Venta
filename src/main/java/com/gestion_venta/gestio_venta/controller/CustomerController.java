@@ -83,8 +83,7 @@ public class CustomerController {
 
     @GetMapping({ "/consultation" })
     public String listConsultation(Model model) {
-        // model.addAttribute("title", "Facturación | Customer");
-        model.addAttribute("consultation", service.listCustomers());
+        model.addAttribute("consultations", service.listConsultation());
         return "consultation";
     }
     

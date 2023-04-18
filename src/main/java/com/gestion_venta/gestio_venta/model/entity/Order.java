@@ -7,6 +7,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
@@ -24,9 +25,11 @@ public class Order implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createAt;
 
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Commercial commercial;
 

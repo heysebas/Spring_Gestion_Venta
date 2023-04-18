@@ -49,7 +49,7 @@ public class CustomerServiceImpl implements ICustomerService{
 
     @Override
     @Transactional(readOnly = true)
-    public List<Customer> listConsultation() {
+    public List<Object[]> listConsultation() {
         return customerDao.filter();
     }
 }

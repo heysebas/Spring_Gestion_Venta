@@ -12,5 +12,5 @@ public void saveCustomer(Customer customer); // guardar clientes
 public Customer getCustomersById(Long id); // obtener clienyes por id
 public Customer updateClients(Customer customer); // actualizar clientes
 public void deleteClients(Long id); // eliminar clientes
-public List<Customer> listConsultation();
+public List<Object[]> listConsultation();
 }

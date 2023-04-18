@@ -51,7 +51,7 @@
                 <tr th:each="order : ${orders}">
                     <td th:text="${order.amount}">Cantidad</td>
                     <td th:text="${order.customer.name}">Cliente</td>
-                    <td th:text="${order.commercial.name}">Comercioal</td>
+                    <td th:text="${order.commercial.name}">Comercio</td> 
                     <!-- <td th:each="commercial : ${commercial}" th:value="${commercial.id}" th:text="${commercial.name}">Comercio</td> -->
                     <td th:text="${order.createAt}">Fecha de creación</td>
                     <td>
